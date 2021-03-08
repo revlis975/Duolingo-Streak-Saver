@@ -36,9 +36,13 @@ button = driver.find_element_by_css_selector("button[data-test='register-button'
 driver.execute_script("arguments[0].click();", button)
 
 
-WebDriverWait(driver,30).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[2]/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div/div/div[1]/div/div[2]/div[1]'))).click()
-
-time.sleep(1)
+try:
+	WebDriverWait(driver,3).until(EC.presence_of_element_located((By.XPATH,'//*[@id="overlays"]/div[5]/div/div[2]/button'))).click()
+	WebDriverWait(driver,10).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[2]/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div/div/div[1]/div/div[2]/div[1]'))).click()
+	time.sleep(1)
+except:
+	WebDriverWait(driver,10).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[2]/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div/div/div[1]/div/div[2]/div[1]'))).click()
+	time.sleep(1)
 
 WebDriverWait(driver,30).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[2]/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div[2]/div/div[1]/div[3]/button'))).click()
 
@@ -49,7 +53,7 @@ size = []
 
 for i in range(10):	
 
-	time.sleep(1)
+	time.sleep(0.5)
 	
 	size.append(len(driver.find_elements_by_xpath('//*[@id="root"]/div/div/div/div/div[2]/div/div/div/div/div[2]/div[1]/div/span/div')))
 	
@@ -127,7 +131,7 @@ for i in range(10):
 
 	WebDriverWait(driver,30).until(EC.presence_of_element_located((By.CSS_SELECTOR,"button[data-test='player-next']"))).click()
 
-	time.sleep(1)
+	time.sleep(0.5)
 	if(i==4):
 
 		WebDriverWait(driver,30).until(EC.presence_of_element_located((By.CSS_SELECTOR,"button[data-test='player-next']"))).click()
@@ -135,6 +139,6 @@ for i in range(10):
 	i = i+1
 
 time.sleep(5)
-WebDriverWait(driver,30).until(EC.presence_of_element_located((By.CSS_SELECTOR,"button[data-test='player-next']"))).click()
-
+driver.find_element_by_css_selector("button[data-test='player-next']").click()
 driver.close()
+
