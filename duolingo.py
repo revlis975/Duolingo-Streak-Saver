@@ -38,10 +38,10 @@ driver.execute_script("arguments[0].click();", button)
 
 try:
 	WebDriverWait(driver,3).until(EC.presence_of_element_located((By.XPATH,'//*[@id="overlays"]/div[5]/div/div[2]/button'))).click()
-	WebDriverWait(driver,10).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[2]/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div/div/div[1]/div/div[2]/div[1]'))).click()
+	WebDriverWait(driver,10).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[2]/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div/div/div[1]/div/div[1]'))).click()
 	time.sleep(1)
 except:
-	WebDriverWait(driver,10).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[2]/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div/div/div[1]/div/div[2]/div[1]'))).click()
+	WebDriverWait(driver,30).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[2]/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div/div/div[1]/div/div[1]'))).click()
 	time.sleep(1)
 
 WebDriverWait(driver,30).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[2]/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div[2]/div/div[1]/div[3]/button'))).click()
