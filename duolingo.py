@@ -138,7 +138,8 @@ for i in range(10):
 
 	i = i+1
 
-time.sleep(5)
+time.sleep(4)
 driver.find_element_by_css_selector("button[data-test='player-next']").click()
+time.sleep(7)
 driver.close()
 
