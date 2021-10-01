@@ -11,4 +11,4 @@ Read the Requirements file to check eligibility<br>
 
 If you want other languages you can let me know or make a PR yourself adding a few sentences
 
-![A successful run looks like this](https://github.com/revlis975/Duolingo-Streak-Saver/blob/master/Web-bot-working.gif) 
+![A successful run looks like this](https://github.com/revlis975/Duolingo-Streak-Saver/blob/master/Web-bot-working.gif | height=100 width=100) 
