@@ -23,7 +23,7 @@ username_input = '//*[@id="overlays"]/div[5]/div/div[2]/form/div[1]/div[1]/div[1
 password_input = '//*[@id="overlays"]/div[5]/div/div[2]/form/div[1]/div[1]/div[2]/label/div[1]/input'
 login_submit = '//*[@id="overlays"]/div[5]/div/div[2]/form/div[1]/button/span'
 
-driver.find_element_by_xpath(account).click()
+WebDriverWait(driver,30).until(EC.presence_of_element_located((By.CSS_SELECTOR,"button[data-test='have-account']"))).click()
 
 # --------- TODO -------------
 
@@ -36,15 +36,11 @@ button = driver.find_element_by_css_selector("button[data-test='register-button'
 driver.execute_script("arguments[0].click();", button)
 
 
-try:
-	WebDriverWait(driver,3).until(EC.presence_of_element_located((By.XPATH,'//*[@id="overlays"]/div[5]/div/div[2]/button'))).click()
-	WebDriverWait(driver,10).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[2]/div/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div/div/div[1]/div/div[1]'))).click()
-	time.sleep(1)
-except:
-	WebDriverWait(driver,30).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[2]/div/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div/div/div[1]/div/div[1]'))).click()
-	time.sleep(1)
+WebDriverWait(driver,30).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[4]/div/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div/div/div[1]/div'))).click()
 
-WebDriverWait(driver,30).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[2]/div/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div[2]/div/div[1]/div[3]/a'))).click()
+
+WebDriverWait(driver,30).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[4]/div/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div[2]/div/div[1]/div[4]/a'))).click()
+
 
 WebDriverWait(driver,30).until(EC.presence_of_element_located((By.CSS_SELECTOR,"button[data-test='player-toggle-keyboard']"))).click()
 
