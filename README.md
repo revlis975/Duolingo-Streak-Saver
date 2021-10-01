@@ -3,10 +3,12 @@ Simple automation script for lazy Duolingo users like me that automates login an
 
 Read the Requirements file to check eligibility<br>
 
-### How to run 
+### How to run
 
 - Add your email, password and chromedriver location to the instructed area in the code<br>
 - Run the Duolingo.py file and the rest will be done for you<br>
 - You can schedule this task on your PC to run at a particular time everyday <br>
 
-If you want other languages you can let me know or make a PR yourself adding a few sentences 
+If you want other languages you can let me know or make a PR yourself adding a few sentences
+
+![A successful run looks like this](https://github.com/revlis975/Duolingo-Streak-Saver/blob/master/Web-bot-working.gif) 
