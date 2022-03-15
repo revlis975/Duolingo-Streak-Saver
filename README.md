@@ -7,7 +7,7 @@ Read the Requirements file to check eligibility<br>
 
 - Add your email, password and chromedriver location to the instructed area in the code<br>
 - Run the Duolingo.py file and the rest will be done for you<br>
-- You can schedule this task on your PC to run at a particular time everyday <br>
+- You can schedule this task on task scheduler to run at a particular time everyday <br>
 
 If you want other languages you can let me know or make a PR yourself adding a few sentences
 
