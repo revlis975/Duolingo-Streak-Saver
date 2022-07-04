@@ -9,13 +9,14 @@ ctx = ssl.create_default_context()
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
+chrome_options = Options()
+chrome_options.add_argument("--disable-gpu")
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--output=/dev/null")
+chrome_options.add_argument("--mute-audio")
 
-# ---------- TODO ------------ 
 
-#ENTER YOUR CHROMEDRIVER LOCATION 
-
-chromedriver_location = "enter your chromedriver.exe location including chromedriver.exe in the end"
-driver = webdriver.Chrome(chromedriver_location)
+driver = webdriver.Chrome(options=chrome_options)
 driver.get("https://www.duolingo.com")
 
 account = '//*[@id="root"]/div/div/span[1]/div/div[1]/div[2]/div[2]/a'
@@ -35,13 +36,21 @@ driver.find_element_by_css_selector("input[data-test='password-input']").send_ke
 button = driver.find_element_by_css_selector("button[data-test='register-button']")
 driver.execute_script("arguments[0].click();", button)
 
+time.sleep(5)
 
-WebDriverWait(driver,30).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[4]/div/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div/div/div[1]/div'))).click()
-
-
-WebDriverWait(driver,30).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[4]/div/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div[2]/div/div[1]/div[4]/a'))).click()
-
-
+try:
+	WebDriverWait(driver,30).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[5]/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div/div/div[1]/div/div[1]/div[1]'))).click()
+	time.sleep(3)
+	WebDriverWait(driver,30).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[5]/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div[2]/div/div[1]/div[4]/a'))).click()
+except:
+	try:
+		WebDriverWait(driver,30).until(EC.presence_of_element_located((By.XPATH,'//*[@id="overlays"]/div[4]/div/div[2]/button/span'))).click()
+		time.sleep(3)
+		WebDriverWait(driver,30).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[5]/div/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div[2]/div/div[1]/div[4]/a'))).click()
+	except:
+		WebDriverWait(driver,30).until(EC.presence_of_element_located((By.XPATH,'//*[@id="overlays"]/div[4]/div/div/div/div[2]/button'))).click()
+		time.sleep(3)
+		WebDriverWait(driver,30).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[5]/div/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div[2]/div/div[1]/div[4]/a'))).click()
 WebDriverWait(driver,30).until(EC.presence_of_element_located((By.CSS_SELECTOR,"button[data-test='player-toggle-keyboard']"))).click()
 
 gWords = []
@@ -134,6 +143,7 @@ for i in range(10):
 
 	i = i+1
 
+print("Congratulations on continuing your streak!!")
 time.sleep(4)
 driver.find_element_by_css_selector("button[data-test='player-next']").click()
 time.sleep(7)
