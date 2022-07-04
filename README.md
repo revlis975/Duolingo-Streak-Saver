@@ -5,7 +5,7 @@ Read the Requirements file to check eligibility<br>
 
 ### How to run
 
-- Add your email, password and chromedriver location to the instructed area in the code<br>
+- Add your Duolingo registered email and password to the instructed area in the code<br>
 - Run the Duolingo.py file and the rest will be done for you<br>
 - You can schedule this task on task scheduler to run at a particular time everyday <br>
 
