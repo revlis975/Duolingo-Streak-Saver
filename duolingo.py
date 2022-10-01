@@ -51,30 +51,30 @@ for i in range(10):
 
 	s = " "
 	s = s.join(gWords)
-	
-	ele = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR,"textarea[data-test='challenge-translate-input']")))
+	 
+	ele = WebDriverWait(driver,30).until(EC.presence_of_element_located((By.CSS_SELECTOR,"textarea[data-test='challenge-translate-input']")))
 
 	translations = {
-	  "Darf ich dich zum abendessen einladen": "May I invite you to dinner",
-	  "Ich finde dich nett": "I think you are nice",
-	  "Der Kaffee geht auf mich": "The coffee is on me",
-	  "Deine Augen sind wie Sterne.": "Your eyes are like stars",
-	  "Ich finde dich süß": "I think you're cute",
-	  "Willst du tanzen": "Do you want to dance",
-	  "Darf ich dich küssen": "May I kiss you",
-	  "Ich möchte dich besser kennen lernen": "I would like to get to know you better",
-	  "Du siehst aus wie meine nachste freundin": "You look like my next girlfriend",
-	  "Ich bin neu hier, und du?": "I am new here, and you",
-	  "Du bist schlau": "You are smart",
-	  "Du bist witzig": "You are funny",
-	  "Kann ich dir ein Getränk bestellen": "Can I order you a drink",
-	  "Ich hab mich in dich verliebt": "I have fallen in love with you",
-	  "Du kannst gut tanzen!": "You can dance well",
-	  "Ich liebe dich": "I love you",
-	  "Ich mag dich": "I like you",
-	  "Kann ich dich anrufen": "Can I call you",
-	  "Willst du mit mir ausgehen": "Do you want to go out with me"
-	}
+		"Darf ich dich zum abendessen einladen": "May I invite you to dinner",
+		"Ich finde dich nett": "I think you are nice",
+		"Der Kaffee geht auf mich": "The coffee is on me",
+		"Deine Augen sind wie Sterne.": "Your eyes are like stars",
+		"Ich finde dich süß": "I think you're cute",
+		"Willst du tanzen": "Do you want to dance",
+		"Darf ich dich küssen": "May I kiss you",
+		"Ich möchte dich besser kennen lernen": "I would like to get to know you better",
+		"Du siehst aus wie meine nachste freundin": "You look like my next girlfriend",
+		"Ich bin neu hier, und du?": "I am new here, and you",
+		"Du bist schlau": "You are smart",
+		"Du bist witzig": "You are funny",
+		"Kann ich dir ein Getränk bestellen": "Can I order you a drink",
+		"Ich hab mich in dich verliebt": "I have fallen in love with you",
+		"Du kannst gut tanzen!": "You can dance well",
+		"Ich liebe dich": "I love you",
+		"Ich mag dich": "I like you",
+		"Kann ich dich anrufen": "Can I call you",
+		"Willst du mit mir ausgehen": "Do you want to go out with me"
+
 
 	if s in translations.keys():
 		ele.send_keys(translations[s])
