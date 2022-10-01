@@ -34,10 +34,10 @@ driver.find_element_by_css_selector("input[data-test='email-input']").send_keys(
 driver.find_element_by_css_selector("input[data-test='password-input']").send_keys("enter password")
 button = driver.find_element_by_css_selector("button[data-test='register-button']")
 driver.execute_script("arguments[0].click();", button)
+time.sleep(20)
 
-
-WebDriverWait(driver,30).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[4]/div/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div/div/div[1]/div'))).click()
-
+driver.execute_script("arguments[0].click();", driver.find_element_by_xpath('//*[text()="Flirting"]'))
+time.sleep(10)
 
 WebDriverWait(driver,30).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[4]/div/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div[2]/div/div[1]/div[4]/a'))).click()
 
