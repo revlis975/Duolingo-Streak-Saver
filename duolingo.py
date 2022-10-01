@@ -42,7 +42,7 @@ try:
 	time.sleep(1)
 except:
 	WebDriverWait(driver,30).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[2]/div/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div/div/div[1]/div/div[1]'))).click()
-	# time.sleep(1)
+	time.sleep(1)
 
 WebDriverWait(driver,30).until(EC.presence_of_element_located((By.XPATH,'//*[@id="root"]/div/div[2]/div/div/div/div[1]/div/div[2]/div[1]/div/div[5]/div/div[2]/div/div[1]/div[3]/a'))).click()
 
